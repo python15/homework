@@ -9,7 +9,7 @@ def delete_user(username):
     if username in user_info.keys():
         user_info.pop(username)
     else:
-        return "User {} is nor exist.".format(username)
+        print("User {} is nor exist.".format(username))
 
 def update_user(username,age,phone_no):
     if username in user_info.keys():
