@@ -1,7 +1,8 @@
 #!/bin/python3.6
+#by chenqingmei
 
 #create the default users dictionary
-usersinformation = {'Tom':[18,13354629024],'Jerry':[22,13590567782],'Elsa':[21,1774724923]}
+usersinformation = {'Tom':['18','13354629024'],'Jerry':['22','13590567782'],'Elsa':['21','1774724923']}
 commands = ['delete','update','find','list','exit']  #valid commands
 
 print('Command:\n'
