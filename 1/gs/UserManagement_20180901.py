@@ -80,3 +80,5 @@ if __name__=='__main__':
 		elif selection == '5':
 			print 'exit...'
 			exit()
+
+# 逻辑上 没有啥问题，换成python3的好点
