@@ -78,5 +78,5 @@ while True:
         break  #exit the program
 
 
-
+# 能不能把delete|update|find|list|exit做成独立的函数呢，最好在加个add的操作, update的时候，最好规定好格式
 
