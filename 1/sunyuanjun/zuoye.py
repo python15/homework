@@ -1,3 +1,4 @@
+# encoding:utf-8
 user_info = {
     'zhangsan':{'age':20,'phone_no':88888888,},
     'xiaoming':{'age':18,'phone_no':12345678},
@@ -36,17 +37,17 @@ while True:
     Input "exit" to quit the program
     Please input the operator:''')
     if action == 'delete':
-        user = input('ÇëÊäÈëÓÃ»§Ãû:')
+        user = input('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½:')
         delete_user(user)
         continue
     elif action == 'update':
-        user = input('ÇëÊäÈëÓÃ»§Ãû:')
-        age = int(input('ÇëÊäÈëÄêÁä:'))
-        phone_no = int(input('ÇëÊäÈëÁªÏµµç»°:'))
+        user = input('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½:')
+        age = int(input('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:'))
+        phone_no = int(input('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ç»°:'))
         update_user(user,age,phone_no)
         continue
     elif action == 'find':
-        user = input('ÇëÊäÈëÓÃ»§Ãû:')
+        user = input('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½:')
         find_user(user)
         continue
     elif action == 'list':
@@ -58,3 +59,6 @@ while True:
     else:
         print('Please input the right operator.')
         continue
+
+
+# ä»£ç çœ‹ç€æ²¡æœ‰ä»€ä¹ˆé—®é¢˜ï¼Œå°è¯•åŠ ä¸ªaddçš„æ“ä½œï¼Œå…è®¸ç”¨æˆ·æ–°å¢ç”¨æˆ·

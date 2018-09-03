@@ -10,9 +10,11 @@ except Exception as e:
 finally:
     f.close()
 
+
 def chk_name():
     name = input('input user name: ')
     return name
+
 
 while True:
     opt = input('chk_user > ')
@@ -57,3 +59,4 @@ while True:
 
 
 
+# 看着代码没有什么问题，不过能不能chk_user的时候，提示下用户，有哪些操作呢？

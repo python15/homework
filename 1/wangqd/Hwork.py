@@ -84,3 +84,6 @@ while True:
         list(action)
     elif action == 'exit':
         break
+
+
+# 代码的逻辑很清晰，大体的功能没有啥问题，加个add的操作，顺便可以考虑下用户信息 持久化存储
