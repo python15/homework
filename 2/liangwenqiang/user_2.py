@@ -14,10 +14,6 @@ finally:
 def input_name():
     name = input('input user name: ')
     return name
-def chk_name(name,user):
-    if not user:
-        print('no such user: "{}" ,you can add it'.format(name))
-        return False
 
 def chk_user():
     with open(db,'r') as f:
