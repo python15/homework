@@ -120,9 +120,3 @@ while True:
         else:
             print('退出程序')
             break
-
-
-
-
-
-
