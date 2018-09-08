@@ -3,11 +3,14 @@ Information = {
     'wade': {'age': 35,'tel': '123523'},
     'paul': {'age': 32,'tel': '124712'}
 }
-def Format(name,age,tel,s='def_action'):
+
+
+def Format(name,age,tel, s='def_action'):
     '''格式化输出'''
     s = Act
     print('{:#^30}'.format(s))
     print('Name: {}\nAge: {}\nTel: {}\n'.format(name,age,tel))
+
 
 flag = False
 while not flag:
@@ -36,3 +39,6 @@ while not flag:
                 continue
         else:
             print('{} is not in Information,Repeat it!'.format(Name))
+
+
+# Format 这个函数里面的参数 s='def_action' 好像没有用上，还有能不能把delete|update|find|list|exit做成独立的函数呢，最好在加个add的操作

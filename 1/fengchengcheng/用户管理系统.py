@@ -79,3 +79,4 @@ if __name__ == '__main__':
         else:
             sys.exit("good bye,sir")
             
+# 这个是python2的代码吧，咱们学的是python3，麻烦用python3改写下
