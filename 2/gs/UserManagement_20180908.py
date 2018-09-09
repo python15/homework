@@ -40,23 +40,54 @@ def userAdd(nname, nage, ntel):
 
 def userList():
 	id=1
-	print ("")
-	print ("\nAll User Info:\n")
-	for key in userinfo:
-		print ("%d. Name: %s 年龄: %d 电话: %s 密码: ******\n" %(id, key, int(userinfo[key]['age']), userinfo[key]['tel']))
-		id +=1
+	user_tmp = {} 
+
+	ctype = input("\nPlease Choose Sort Type: 1. Username(Default) 2. Age 3. Phone : ")
+
+
+	if ctype == '1' or ctype == '':
+		print ('Sorted by Username:')
+		sort_un = sorted(userinfo.keys())
+		for key in sort_un:
+			print ("%d. Name: %s Age: %d Phone: %s PWD: ******\n" %(id, key, int(userinfo[key]['age']), userinfo[key]['tel']))
+			id +=1
+
+	elif ctype == '2':
+		print ('Sorted by Age:\n')
+		for key in userinfo:
+			user_tmp[key] = userinfo[key]['age']
+		for name in sorted(user_tmp.items(), key=lambda x:x[1]):
+			for key1 in userinfo:
+				if name[0] == key1:
+					print ("%d. Name: %s Age: %d Phone: %s PWD: ******\n" %(id, key1, int(userinfo[key1]['age']), userinfo[key1]['tel']))
+					id += 1
+
+	elif ctype == '3':
+		print ('Sorted by Phone:\n')
+		for key in userinfo:
+			user_tmp[key] = userinfo[key]['tel']
+		for name in sorted(user_tmp.items(), key=lambda x:x[1]):
+			for key1 in userinfo:
+				if name[0] == key1:
+					print ("%d. Name: %s Age: %d Phone: %s PWD: ******\n" %(id, key1, int(userinfo[key1]['age']), userinfo[key1]['tel']))
+					id += 1
+	
+	else:
+		print ('\n Type Error.\n')
 
 if __name__=='__main__':
 	userinfo={'gs':{'age':18,'tel':'12345678900', 'pwd':'123abc'}, 
-                  '张三':{'age':27, 'tel':'18017172233', 'pwd':'123abc'},
-		  '小翠':{'age':16, 'tel':'19199223300', 'pwd':'123abc'},
-		  '无名':{'age':70, 'tel':'', 'pwd':'123abc'}
+                  'zhangsan':{'age':27, 'tel':'18017172233', 'pwd':'123abc'},
+		  'xiaocui':{'age':16, 'tel':'19199223300', 'pwd':'123abc'},
+		  'wuming':{'age':70, 'tel':'', 'pwd':'123abc'}
 		}
 
 
 	user = input('Please enter login username:')
 	pwd = getpass.getpass('password:')
 	login = userLogin(user, pwd)
+
+	#login = 1
 
 	if login:
 		print ("\n\nLogin as %s .\n\n" %user)
