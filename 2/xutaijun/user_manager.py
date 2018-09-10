@@ -196,7 +196,7 @@ def user_manager():
         elif menu_input=="update":
             user_update()
         elif menu_input=="find":
-            user_find("")
+            user_find("default")
         elif menu_input=="list":
             user_list()
         elif menu_input=="add":
