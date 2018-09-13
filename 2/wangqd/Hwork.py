@@ -91,3 +91,5 @@ while True:
     if action == 'quit': 
         break 
  
+
+# 逻辑上没有啥问题，不过代码里面有点小问题，过多的使用while True，可考虑for，进入程序的时候，需要输入账号和密码。list 排序的时候，最好有个提示信息，再改改哈

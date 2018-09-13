@@ -116,7 +116,7 @@ if __name__=='__main__':
 						if res == 0:
 							print ("No user named %s, please check it.\n" %(name))
 					except ValueError:
-						print ("Input Error, Please try again") 
+						print ("Input Error, Please try again")
 				else:
 					print ("format not right.\n")
 
@@ -140,7 +140,7 @@ if __name__=='__main__':
 						if res == 0:
 							print ("User %s Add Success." %(name))
 					except ValueError:
-						print ("Input Error, Please try again") 
+						print ("Input Error, Please try again")
 				else:
 					print ("format not right.\n")
 
@@ -150,3 +150,5 @@ if __name__=='__main__':
 
 	else:
 		print ("Password Error!")
+
+# 写的很好，有登录验证，不过有个小问题，print 是个函数，一般函数是个方法，print() 直接最好不要有括号，新增用户的时候，我出现异常了，麻烦检出下

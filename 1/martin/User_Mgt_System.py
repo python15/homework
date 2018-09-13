@@ -85,3 +85,6 @@ while True:
         update_user()
     else:
         print('Invalid input,please enter the correct keyword!')
+
+
+# 逻辑上没有上啥问题，不过既然有序号了，那么再选择功能的时候，是不是可以直接输入序号呢？顺便增加个add的操作哈
