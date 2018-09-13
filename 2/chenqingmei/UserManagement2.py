@@ -1,8 +1,9 @@
 #!/bin/python3.6
 import getpass
-import collections
+import sys
 
 
+administrator = {}
 users = {'Tom':['18','13457561423','123456'],
          'Jerry':['20','17641378980','123456'],
          'Elsa':['23','13510498726','123456']}
@@ -11,10 +12,10 @@ listformat = '%-10s%-10s%-15s%-10s'
 
 #functions
 #authentication
-def authenticate(username):
-    print('input user\'s password:')
+def authenticate(loginUser):
+    print('input administator\'s password:')
     pwd = input('>>>')
-    if pwd == users[username][2]:
+    if pwd == administrator[loginUser]:
         return True
     else:
         return False
@@ -62,7 +63,9 @@ def add(username, age, tel, pwd):
             users[username].append(age)
             users[username].append(tel)
             users[username].append(pwd)
-            print('user {} is added!'.format(username))
+            print('user {} is added!\n'
+                  'age: {}\n'
+                  'Tel:{}'.format(username,users[username][0],users[username][1]))
 
 def find(username):
     if not users.get(username):
@@ -74,7 +77,6 @@ def find(username):
         print('pwd: '+'*'*len(users[username][2]))
 
 def list():
-    od = collections.OrderedDict()
     print('1 -- list users according to \'name\'\n'
           '2 -- list users according to \'age\'\n'
           '3 -- list users according to \'tel\'')
@@ -96,6 +98,35 @@ def exit():
     print('exit this program!')
 
 
+#create administrator
+print('Please create administrator at first!')
+admin = input('name of administrator >>>')
+adminPwd = input('password >>>')
+administrator[admin] = adminPwd
+print('create administrator successfully!\n'
+      'press any key to login!\n'
+      'input "exit" to exit the program!')
+excute = input('>>>')
+if excute == commands[5]:
+    exit()
+    sys.exit(0)
+
+#login
+while True:
+    print('Login:')
+    loginUser = input('name >>>')
+    loginPwd = input('password >>>')
+    if loginUser != admin or loginPwd != adminPwd:
+        print('Login Error! User or password is not incorrect!\n'
+              'Input "exit" to exit this program. Press any key to try again!')
+        login = input('>>>')
+        if login == commands[5]: #exit
+            exit()
+            sys.exit(0)
+        else:
+            continue
+    else:
+        break
 
 
 print('Command:\n'
@@ -120,24 +151,24 @@ while True:
 
     #add or update
     if cmd == commands[1] or cmd == commands[2]:
-        print('input user information,use \':\' to separate each data:')
-        information = input('>>>')
-        temp = information.partition(':')
-        username = temp[0]
-        temp = temp[2].partition(':')
-        age = temp[0]
-        temp = temp[2].partition(':')
-        tel = temp[0]
-        pwd = temp[2]
+        print('input user information:')
+        username = input('user name: ').strip()
+        age = input('user age: ')
+        age = age.strip().lstrip('0')
+        tel = input('user Tel: ')
+        pwd = input('user password: ')
+        if int(age) < 1 or int(age) > 120:
+            print('age is invalid!')
+            continue
+
         print(username,age,tel,pwd)
+        if not authenticate(admin):
+            print('Password Error!')
+            continue
         if cmd == commands[1]: #add
             add(username,age,tel,pwd)
-        else:
-            auth = authenticate(username)
-            if auth:
-                update(username,age,tel,pwd)
-            else:
-                print('password error!')
+        else: #update
+            update(username,age,tel,pwd)
         continue
 
     #find
@@ -156,6 +187,3 @@ while True:
     if cmd == commands[5]:
         exit()
         break
-
-
-# 大体上没有什么问题，进入操作的时候，没有验证账号和密码。还有就是在add操作的时候，提示的信息不够明显，还有就是格式会混乱
