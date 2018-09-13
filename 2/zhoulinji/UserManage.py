@@ -23,7 +23,6 @@ def user_info_format(username, password, age, contracts):
 
 
 def re_sort(dict_name, n):
-    print(dict_name)
     new_list = []
     for key in dict_name:
         value = dict_name[key].split(':')
@@ -32,17 +31,25 @@ def re_sort(dict_name, n):
     return new_list
 
 
+flag = False  # 是否已认证密码，默认否
+
 while True:
-    input_password = input('请输入你的管理密码(admin)：')
-    if input_password != 'admin':
-        print('密码输入错误，请重新输入：')
-        continue
-    operate_type = input('请输入操作类型（delete，upate，find，list，add,exit）:')
+
+    if not flag:
+        input_password = input('请输入你的管理密码(默认为‘admin’)>>>>>：')
+        if input_password != 'admin':
+            print('密码输入错误，请重新输入>>>>>')
+            continue
+        else:
+            flag = True
+
+    operate_type = input('请输入操作类型（可选：delete，upate，find，list，add,exit）>>>>>:')
     if operate_type not in ['delete', 'update', 'find', 'list', 'add', 'exit']:
+        print('操作类型输入错误，请重输>>>')
         continue
     else:
         if operate_type == 'delete':
-            input_username = input('请输入需要删除的用户名：')
+            input_username = input('请输入需要删除的用户名>>>>>：')
             if input_username in dict_users:
                 del dict_users[input_username]
                 print('已成功删除用户:', input_username)
@@ -51,37 +58,42 @@ while True:
             continue
         elif operate_type == 'update':
             while True:
-                input_str = input('请输入“用户名:年龄:联系方式：密码”：')
+                input_str = input('请输入“用户名:年龄:联系方式：密码”>>>>>：')
+                if input_str.count(':') != 3:
+                    print('输入格式错误>>>>>：')
+                    continue
                 input_username = input_str.split(':', 1)
                 if input_username[0] in dict_users:
                     dict_users[input_username[0]] = input_username[1]
                     print('更新用户信息成功！')
                     break
                 else:
-                    oprate_choice = input('不存在用户'+input_username[0]+'是否重新输入用户信息:[Y/N]')
+                    oprate_choice = input('不存在用户'+input_username[0]+'是否重新输入用户信息>>>>>:[Y/N]')
                     if oprate_choice in ['Y', 'y']:
                         continue
                     else:
                         print('返回操作列表>>>>>')
                         break
+
         elif operate_type == 'find':
             while True:
-                input_username = input('请输入需要查找的用户名：')
+                input_username = input('请输入需要查找的用户名>>>>>：')
                 if input_username in dict_users:
                     user_info = dict_users[input_username].split(':')
                     user_info_format(input_username, user_info[2], user_info[0], user_info[1])
                     break
                 else:
-                    oprate_choice = input('不存在用户' + input_username + '是否重新输入Y/N:')
+                    oprate_choice = input('不存在用户' + input_username + '是否重新输入Y/N >>>>>:')
                     if oprate_choice in ['Y', 'y']:
                         continue
                     else:
                         print('返回操作列表>>>>>')
                         break
+
         elif operate_type == 'list':
             count = 0
             while 1:
-                choice_of_sort = input('请输入排序方式：name/age/tel.默认按照用户名name顺序显示：')
+                choice_of_sort = input('请输入排序方式：name/age/tel.默认按照用户名name顺序显示>>>>>：')
                 if choice_of_sort in ['', 'name']:
                     pass
                 elif choice_of_sort == 'age':
@@ -92,9 +104,8 @@ while True:
                     print('输入参数有误，请重新输入>>>>')
                     continue
                 break
-            user_info = re_sort(dict_users, 1)
-            print(user_info)
 
+            user_info = re_sort(dict_users, count)
 
             for i in user_info:
                 j = []
@@ -106,11 +117,12 @@ while True:
                 password = j[3]
                 user_info_format(username, password, age, contracts)
                 j.clear()
+
         elif operate_type == 'add':
             while True:
-                input_username = input('请输入需要增加的用户信息（用户名：年龄：联系方式）：')
-                if input_username.count(':') != 2:
-                    print('输入格式错误：')
+                input_username = input('请输入需要增加的用户信息（用户名：年龄：联系方式:密码）>>>>>：')
+                if input_username.count(':') != 3:
+                    print('输入格式错误>>>>>：')
                     continue
                 else:
                     part_of_userinfo = input_username.split(':', 1)
