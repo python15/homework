@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[3]:
+# In[6]:
 
 
 #User information management program
@@ -18,59 +18,60 @@
 #如果用户输入 exit， 则打印退出程序， 并退出 ;   
 
 
-# In[29]:
+# In[7]:
 
 
 print('User Information Management Program Instructions')
 print('Please use the following commands to manipulate the program')
 print('find: Enter a Name to look up information')
-print('update: Add a new User to the program ')
+print('update: Update user information ')
+print('add: Add a new user')
 print('delete: Remove a User in the program which has already existed')
 print('list: Present all the User information')
 print('exit: Exit the program')
 
 
-# In[30]:
+# In[8]:
 
 
 #Default dictionary
 Dic_0={'Name':[],'Age':[],'Contact':[]}
 
 
-# In[5]:
+# In[9]:
 
 
 #function1 Update user infomation
 
 
-# In[9]:
+# In[10]:
 
 
-def Upd(Dic):
-    print('Please enter User Information in the following order:')
+def add(Dic):
+    print('Please enter a new user in the following order:')
     print('Name:Age:Contact')
     User_info=input()
-    InfoList=User_info.split(':')
-    Dic['Name'].append(InfoList[0])
-    Dic['Age'].append(InfoList[1])
-    Dic['Contact'].append(InfoList[2])
-    print('Done!')
+    InfoList=User_info.split(':') #turn string into list
+    Dic['Name'].append(InfoList[0]) #add name
+    Dic['Age'].append(InfoList[1]) #add age
+    Dic['Contact'].append(InfoList[2]) #add contact
+    print('Done!') #indicating job done
     #print(Dic_0) funtion test
 
 
-# In[ ]:
+# In[11]:
 
 
 #function2 find info
 
 
-# In[13]:
+# In[12]:
 
 
 def find(Dic):
     print('Please enter a Name:')
     UserName=input()
-    if UserName in Dic_0['Name']:
+    if UserName in Dic['Name']:
         Pn=Dic['Name'].index(UserName)
         print('Name:',Dic['Name'][Pn])
         print('Age:',Dic['Age'][Pn])
@@ -79,13 +80,13 @@ def find(Dic):
         print(UserName,"is not found!")
 
 
-# In[17]:
+# In[13]:
 
 
 #function3 Delete info
 
 
-# In[18]:
+# In[14]:
 
 
 def Dele(Dic):
@@ -96,17 +97,18 @@ def Dele(Dic):
         del Dic_0['Name'][Pn]
         del Dic_0['Age'][Pn]
         del Dic_0['Contact'][Pn]
+        print('Done!') # indicating the end of deleting
     else:
         print(UserName,"is not found!")
 
 
-# In[19]:
+# In[15]:
 
 
 #function4 List all the info
 
 
-# In[20]:
+# In[16]:
 
 
 def List(Dic):
@@ -118,13 +120,38 @@ def List(Dic):
         print('----------------------------') #我是分隔符
 
 
-# In[26]:
+# In[17]:
 
 
-#function5 User's command lines
+#function5 Update user info
 
 
-# In[28]:
+# In[18]:
+
+
+def Upd(Dic):
+    print('Updating user information.......')
+    print('Please enter a user in the following order:')
+    print('Name:Age:Contact')
+    User_info=input() #read input
+    InfoList=User_info.split(':') #turn string into list
+    if InfoList[0] in Dic['Name']: #find user name
+        Pn=Dic['Name'].index(InfoList[0]) #track down index of username
+        Dic['Age'][Pn]=InfoList[1] # amending Age
+        Dic['Contact'][Pn]=InfoList[2] # amending Contact
+    else:
+        print(InfoList[0],"is not found!")
+    print('Done!') # indicating the end of updating
+    #print(Dic_0) funtion test
+
+
+# In[19]:
+
+
+#function6 User's command lines
+
+
+# In[ ]:
 
 
 print('Please enter your command')
@@ -133,12 +160,14 @@ while loop == 1: #loop before Exit
     cmd=input()
     if cmd == 'list':
         List(Dic_0)
-    elif cmd =='update':
-        Upd(Dic_0)
+    elif cmd =='add':
+        add(Dic_0)
     elif cmd == 'find':
         find(Dic_0)
     elif cmd == 'delete':
         Dele(Dic_0)
+    elif cmd == 'update':
+        Upd(Dic_0)
     elif cmd == 'exit':
         print('Exit Program!')
         break
