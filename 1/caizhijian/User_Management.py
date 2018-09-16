@@ -45,9 +45,9 @@ while True:
     elif cmd == command[2]:
         username = input('input name:')
         if usersinfo.get(username) == None:
-            print('Name:{} Age:{} Phone:{}'.format(username,usersinfo[username][0],usersinfo[username][0]))
+            print('No such user {}'.format(username))
             continue
-        print('No such user {}'.format(username))
+        print('Name:{} Age:{} Phone:{}'.format(username,usersinfo[username][0],usersinfo[username][0]))
         continue
 
     #list
