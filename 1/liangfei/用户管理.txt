@@ -1,0 +1,49 @@
+
+
+#用户管理
+
+users={
+    'xiongda':{'age':28, 'tel':112233},
+    'xionger':{'age':26, 'tel':445566},
+    'guangtouqiang':{'age':32, 'tel':778899}
+}
+
+while 1:
+    name2=input('please input a command(add/delete/update/find/lst/exit): ')
+
+    #删除
+    if name2=='delete':
+        newname=input('please input a name:')
+        if newname in list(users.keys()):
+            users.pop(newname)
+            print('delete {} '.format(newname))
+            print(users)
+        else:
+            print('user is not exist')
+
+
+    #添加
+    if name2=='add':
+        a = input('please input information(name/age/tel): ')
+        print(''.join(a))
+
+    #更新
+    if name2=='update':
+        a = input('please input information(name/age/tel): ')
+        if a in list(users):
+            users.update(list(a))
+        else:
+            print('user is not exist')
+
+    #查找
+    if name2=='find':
+        a = input('please input a name: ')
+        print(users.get(a))
+
+    #列表
+    if name2=='list':
+        print(users)
+
+    #退出
+    if name2=='exit':
+        print('goodbye')
