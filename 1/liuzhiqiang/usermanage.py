@@ -1,56 +1,98 @@
-usersData = [
-    {'username':'tester01', 'age': 27, 'contact': 15200000001},
-    {'username':'tester02', 'age': 28, 'contact': 15200000002},
-    {'username':'tester03', 'age': 29, 'contact': 15200000003}
-    ]
+usersData = {
+    'tester01': [27, 15200000001],
+    'tester02': [28, 15200000002],
+    'tester03': [29, 15200000003]
+}
+usersform = usersData.keys()
+
+SYSTEM_DESC = """
+===UserManage===================================================
+
+Action Comd:
+
+add,    to add a user;
+delete, to delete the specified user;
+update, to update specified user information;
+find,   to find the specified user;
+list,   to display all users information;
+exit,   to exit system
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"""
+
+
+def add_user(username, age, contact):
+    """add function, to add a userinfo"""
+
+    if username not in usersform:
+        usersData[username]  = [age, contact]
+        print("username '{}' add successed,username info:\n{:<15}{:<15}{:<15}".format(\
+         username, username, usersData[username][0], usersData[username][1]))
+    else:
+        print("username '{}' already exists!\n{:<15}{:<15}{:<15}".format(username,\
+         username, usersData[username][0], usersData[username][1]))
+
+def delete_user(username):
+    """delete function, to delete the specified userinfo"""
+
+    if username in usersform:
+        _ = usersData.pop(userinfo)
+        print("user named '{}' had deleted!".format(username))
+    else:
+        print("Sorry, username '{}' does not exist!".format(username))
+
+def update_user(username):
+    """update function, to update specified userinfo"""
+
+    if username in usersform:
+        infos = input("Please enter age:contact, and separated by ':'>>>")
+        if infos.count(':') == 1:
+            userInfos = infos.split(':')
+            usersData[username][0] = int(userInfos[0])
+            usersData[username][1] = int(userInfos[1])
+            print("Success! Update result：\n{:<15}{:<15}{:<15}".format(username, usersData[username][0], usersData[username][1]))
+        else:
+            print("Input format is incorrect, please re-enter!")
+    else:
+        print("Sorry, username '{}' dose not exist!".format(username))
+
+def find_user(username):
+    """find function, to find the specified userinfo"""
+
+    if username in usersform:
+        print("{:<15}{:<15}{:<15}".format(username, usersData[username][0], usersData[username][1]))
+    else:
+        print("Sorry, username '{}' dose not exist!".format(username))
+
+def display():
+    """list function, to display all usersinfo"""
+
+    print("{:<15}{:<15}{:<15}".format('Username', 'Age', 'Contact'))
+    print("-"*50)
+    for i in usersform:
+        print("{:<15}{:<15}{:<15}".format(i, usersData[i][0], usersData[i][1]))
+
+
 flag = True
 while flag:
-    print("""
-    ===UserManage===
-    
-    Action:
-    
-    delete, to delete the specified user;
-    update, to update specified user information;
-    find, to find the specified user;
-    list, to display all users information;
-    exit, to exit system
-    ================================================
-    """)
-    
-    key  = input("请输入action：")
-    if key == 'delete':
-        delete_user = input("请输入将要删除的用户名：")
-        for i in usersData:    #下文有类似重复代码，后续学了函数考虑优化
-            if i['username'] == delete_user:
-                usersData.remove(i)
-                print("用户已删除！")
-                break
-        else:
-            print("抱歉，用户数据不存在！")
-    elif key == 'update':
-        update_user = input("请输入'用户名:年龄:联系方式': ")
-        update_username = update_user.split(':')
-        for i in usersData:
-            if i['username'] == update_username[0]:
-                i['age'] = int(update_username[1])
-                i['contact'] = int(update_username[2])
-                print("更新成功！\n更改信息：%s" %i)
-                break
-        else:
-            print("抱歉，用户数据不存在！")
-    elif key == 'find':
-        find_user = input("请输入查找的用户名：")
-        for i in usersData:
-            if i['username'] == find_user:
-                print(i)
-                break
-        else:
-            print("抱歉，用户数据不存在！")
-    elif key == 'list':
-        print(usersData)
-    elif key == 'exit':
+    print(SYSTEM_DESC)
+    keyword  = input("Please enter the Command：")
+
+    if keyword == 'add':
+        userInfo = input("Please enter username:age:contact, and separated by ':'>>>").strip().split(":")
+        add_user(userInfo[0], userInfo[1], userInfo[2])
+    elif keyword == 'delete':
+        userinfo = input("Please enter the username which delete: ")
+        delete_user(userinfo)
+    elif keyword == 'update':
+        userInfo = input("Please enter the username which update: ")
+        update_user(userInfo)
+    elif keyword == 'find':
+        userInfo = input("Please enter the username which find: ")
+        find_user(userInfo)
+    elif keyword == 'list':
+        display()
+    elif keyword == 'exit':
         flag = False
-        print("系统已退出！")
+        print("UserManage System exit!")
     else:
-        print("输入有误，请重新输入！")
+        print("Incorrect input, please re-enter!")
