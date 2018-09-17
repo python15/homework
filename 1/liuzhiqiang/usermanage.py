@@ -95,11 +95,8 @@ while flag:
         flag = False
         print("UserManage System exit!")
     else:
-<<<<<<< HEAD
         print("Incorrect input, please re-enter!")
-=======
-        print("输入有误，请重新输入！")
+
 
 
 # 逻辑上没有什么问题, 提示信息也很优雅，写的很好，可以考虑下字典嵌套列表的方式来实现，比如tester01:[27, 23123231] 这样方式，顺便加个add的操作吧
->>>>>>> 9adcd11d7b585bb6396122d7a2be37421cccacb4
