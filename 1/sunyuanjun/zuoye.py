@@ -61,10 +61,10 @@ while True:
         list_user()
         continue
     elif action == 'add':
-        user = input('input username:')
-        age = int(input('input age:'))
-        phone_no = int(input('input phone number:'))
-        add_user(user,age,phone_no)
+        info = input('input user,age,phone_no user ":" between info:')
+        info_list = info.split(':')
+        user,age,phone_no = info_list
+        add_user(user,int(age),int(phone_no))
         continue
     elif action == 'exit':
         print('Quit the program.')
