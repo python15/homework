@@ -35,5 +35,4 @@ while True:
         else:
             print(ZeroToNine[input_number[i]] + unit[length], end='')
         length -= 1
-
     print('\n')
