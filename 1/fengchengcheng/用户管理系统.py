@@ -80,3 +80,4 @@ if __name__ == '__main__':
             sys.exit("good bye,sir")
             
 # 这个是python2的代码吧，咱们学的是python3，麻烦用python3改写下
+# 你的这个python的python3有点混乱了
