@@ -187,3 +187,5 @@ while True:
     if cmd == commands[5]:
         exit()
         break
+
+# 不错，可以考虑增加密码错误的验证次数，比如大于三次就强制退出

@@ -65,3 +65,6 @@ while True:
     else:
         print('Exit!')
         break  #exit the program
+
+
+# 逻辑上没有什么问题，可以把功能写成独立的函数，顺便增加个add的操作。

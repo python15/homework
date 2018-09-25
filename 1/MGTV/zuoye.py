@@ -1,6 +1,8 @@
 #auth: mgtv-yys
 users = {'Bob':'M','Lily':'F','Lucy':'F'}
 
+
+
 def deleteUser():
     dUser=input('输入要删除的用户名:')
     if users.__contains__(dUser):
@@ -68,3 +70,5 @@ while True:
         else:
             count+=1
 
+
+# 其实这道题的作业考的是基本的数据类型，你既然用到了__contains__ 这个魔术方法，想必python的基本功应该很扎实

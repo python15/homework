@@ -172,3 +172,4 @@ while loop == 1: #loop before Exit
         print('Exit Program!')
         break
 
+# 稍微改下，判断下如果用户为空，请提示管理员先添加用户

@@ -36,3 +36,6 @@ while True:
             print(ZeroToNine[input_number[i]] + unit[length], end='')
         length -= 1
     print('\n')
+
+
+# 有点小问题哦，考虑下中间的零如何优化，比如：1000这个

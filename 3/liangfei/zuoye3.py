@@ -35,3 +35,5 @@ else:
             else:
                 print('{}佰{}拾{}'.format(a[str(c)],a[str(s)], a[str(g)]))
 print()
+
+# 有点问题哦，1000这个应该是壹仟元整才对的，再考虑下

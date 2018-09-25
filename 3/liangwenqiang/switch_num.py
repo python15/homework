@@ -25,6 +25,7 @@ class SwNum(object):
                       self.num.get(n[3])
         print(re.sub(r'零+$','',re.sub(r'零+','零',re.sub(r'零\w?','零',self.result))))
 
+
 if __name__ == "__main__":
     sw = SwNum()
     while True:
@@ -50,3 +51,5 @@ if __name__ == "__main__":
         else:
             print('out of length!')
 
+
+# 写的真不错！用正则来实现，可以让大家参考下你的，

@@ -1,6 +1,6 @@
 
 
-#ÓÃ»§¹ÜÀí
+#ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
 
 users={
     'xiongda':{'age':28, 'tel':112233},
@@ -11,7 +11,7 @@ users={
 while 1:
     name2=input('please input a command(add/delete/update/find/lst/exit): ')
 
-    #É¾³ı
+    #É¾ï¿½ï¿½
     if name2=='delete':
         newname=input('please input a name:')
         if newname in list(users.keys()):
@@ -22,12 +22,12 @@ while 1:
             print('user is not exist')
 
 
-    #Ìí¼Ó
+    #ï¿½ï¿½ï¿½
     if name2=='add':
         a = input('please input information(name/age/tel): ')
         print(''.join(a))
 
-    #¸üĞÂ
+    #ï¿½ï¿½ï¿½ï¿½
     if name2=='update':
         a = input('please input information(name/age/tel): ')
         if a in list(users):
@@ -35,15 +35,16 @@ while 1:
         else:
             print('user is not exist')
 
-    #²éÕÒ
+    #ï¿½ï¿½ï¿½ï¿½
     if name2=='find':
         a = input('please input a name: ')
         print(users.get(a))
 
-    #ÁĞ±í
+    #ï¿½Ğ±ï¿½
     if name2=='list':
         print(users)
 
-    #ÍË³ö
+    #ï¿½Ë³ï¿½
     if name2=='exit':
         print('goodbye')
+# ä»£ç çœ‹ç€æ²¡æœ‰ä»€ä¹ˆå¤ªå¤§çš„é—®é¢˜ï¼Œå•†é‡ä¸‹ï¼ŒæŠŠtxtæ¢æˆpyçš„å¥½ç‚¹

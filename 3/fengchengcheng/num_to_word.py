@@ -55,3 +55,5 @@ while True:
                     print ("%s仟零%s拾元"%(num[money[0]],num[money[2]]))
                 else:
                     print ("%s仟元"%(num[money[0]]))
+
+# 功能上没有什么问题，不过print是个函数，中间没有空格，优化下：考虑下写成函数。

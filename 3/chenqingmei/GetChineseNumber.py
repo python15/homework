@@ -79,3 +79,4 @@ print(number)
 chNumber = getChineseNumber(number,numberInfo)
 print(chNumber)
 
+# 少个整，最后应该有个整：元整之类的

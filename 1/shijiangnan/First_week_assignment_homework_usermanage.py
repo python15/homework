@@ -43,6 +43,7 @@ def listuser():
         print(m.ljust(20),str(mshuxing[0]).ljust(20),mshuxing[1])
 
 print('Welcome user management system.')
+
 while True:
     print('Please input operator:\n',
     '1.delete ------delete user\n',
@@ -69,3 +70,6 @@ while True:
         break
     else:
         print('Invalid value entered. Please check.')
+
+
+# 写的很不错，字典和列表 是我个人比较推荐的
