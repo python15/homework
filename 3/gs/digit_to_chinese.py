@@ -24,7 +24,11 @@ def NumberMatch(digit, length):
 			output += '零'
 
 	if (output[-1] == '零'):
-		output = output[:-1]+ unit[0]
+		output = output[:-1]+ unit[0] + '整'
+	elif (output[-1] == '元'):
+		output += '整'
+	else:
+		output += '元整'
 
 	print (output)
 
