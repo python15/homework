@@ -12,9 +12,10 @@
 def NumberMatch(digit, length):
 	chinese = [] 
 	output = ''
-	flag = 0
+
 	for i in range(length):
 		chinese.append(number[int(digit[i])])
+
 	for j in range(len(chinese)):	
 		if (chinese[j] != '零'):
 			output += chinese[j] + unit[len(chinese)-j-1]
