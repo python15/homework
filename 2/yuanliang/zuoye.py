@@ -69,9 +69,9 @@ def User_mangement():
                     sort_after = sorted(new_lst,key=lambda new_lst : new_lst['telphone'])
                 else:
                     sort_after = sorted(new_lst, key=lambda new_lst: new_lst['user_name'])
-                print("{}\t{} \t{}      \t{}".format("user_name", "age", "telphone" ,"pasword")) #print key
+                print("{: <15}{: <8}{: <15}{: <15}".format("user_name", "age", "telphone" ,"pasword")) #print key
                 for m in sort_after:   #print value
-                    print("{}    \t{}    \t{}  \t{}".format(m["user_name"],m["age"], m["telphone"],len(m["pasword"]) * "*"))
+                    print("{: <15}{: <8}{: <15}{: <15}".format(m["user_name"],m["age"], m["telphone"],len(m["pasword"]) * "*"))
 
             elif key_words == "exit":
                 print("break")
