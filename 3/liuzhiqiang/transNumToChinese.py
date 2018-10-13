@@ -8,12 +8,15 @@ decimal_unit = ['元', '拾', '佰', '仟', '万']
 
 def get_num():
     while True:
-        orig_num = input("Please enter the original number >>>")
+        orig_num = input("Please enter the original number >>>").lstrip('0')
         if not orig_num.isdigit():
             print("Please enter the digit, try again.")
+        elif len(orig_num) > 5:
+            print("The received number is less than 6, try again.")
         else:
             break
-    # orig_num = '10101'
+        # orig_num = '10101'
+        
     return orig_num.lstrip('0')
 
 def count_number(num):
