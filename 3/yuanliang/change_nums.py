@@ -37,3 +37,5 @@ def change_num(num):
 
 
 change_num(recever_numbers())
+
+# 真的不错，你们太厉害了

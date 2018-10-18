@@ -48,3 +48,5 @@ while True:
     elif userAction == 'exit':
         print('bye~~')
         break
+
+# 很优雅不错，能否抽成独立的函数

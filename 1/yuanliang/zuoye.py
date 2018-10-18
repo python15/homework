@@ -39,3 +39,5 @@ def User_mangement():
             else:
                 print("Please enter true keywords")
 User_mangement()
+
+# 抽成独立的函数，会不会好点？

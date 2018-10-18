@@ -20,3 +20,4 @@ def sortList(src, group, key = separateGroupNum):
 lst = sortList(numbers,group,separateGroupNum)
 print(lst)
 
+# 还有优化的空间，想想

@@ -51,3 +51,4 @@ def trans(number):
 if __name__ == '__main__':
     original_num = get_num()
     trans(original_num)
+# 很厉害，写的真不错

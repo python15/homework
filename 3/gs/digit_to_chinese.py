@@ -49,3 +49,4 @@ if __name__=='__main__':
 	except ValueError:
 		print ("except: input error, retry")
 
+# 格式上有问题的，print是个函数，中间没有空格，功能上很ok

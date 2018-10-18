@@ -68,3 +68,5 @@ while True:
     elif userAction == 'exit':
         print('bye~~')
         break
+
+# 看着没有什么问题，少个认证，再加个持久化存储下试试

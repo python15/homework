@@ -19,3 +19,4 @@ def complexSort(src: str):
     return ''.join(oddNum)+''.join(evenNum)+''.join(lowerLetter)+''.join(upperLetter)
 
 print(complexSort(string))
+# 这个方法可以，想下如果我只用一句代码如何实现？

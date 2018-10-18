@@ -56,3 +56,5 @@ def sort_str(m):
 
 
 print("排序后:"+sort_str(s))
+
+# 两个都有优化的空间

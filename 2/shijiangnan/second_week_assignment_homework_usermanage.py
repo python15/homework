@@ -103,3 +103,5 @@ if logint():
             print('Invalid value entered. Please check.')
 else:
     print('mima error or name error')
+
+# 增加个 密码的错误次数

@@ -48,3 +48,4 @@ t=sort_priority(numbers,group)
 print(t())
 print(datetime.datetime.now()-start)
 
+# 逻辑上是没有什么问题的，但还有优化的空间，想想
