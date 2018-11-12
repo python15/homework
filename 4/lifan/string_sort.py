@@ -1,24 +1,32 @@
 '''
-s = "Sorting1234"
-给定一个只包含大小写字母，数字的字符串，对其进行排序，保证：
-1 所有的小写字母在大写字母前面
-2 所有的字母在数字前面
-3 所有的奇数在偶数前面
+假如有一份列表，其中的元素都是数字，现在要对其排序，但排序时要把现在的某个群组内的数字，放到群组外的那些数字之前，这个题考察如何把重要元素或
+其他的事件优先显示在其他的内容前面。
+提示：可以用高阶函数来实现，如：
+numbers = [8, 3, 1, 2, 5, 4, 7, 6]
+group = {2, 3, 5, 7}
+sort_priority(numbers,group)
+print(numbers)
+结果
+[2,3,5,7,1,4,6,8]
 '''
 
-s = input("Enter a character with case and number: ")
+import random
 
-def strSort(s, digit, lower, capital):
-    for i in s:
-        if i.isdigit():
-            digit.append(i)
-        elif i.islower():
-            lower.append(i)
-        elif i.isupper():
-            capital.append(i)
-
-    return "{} {} {}".format(' '.join(sorted(lower)), ' '.join(sorted(capital)),
-                             ' '.join(sorted(digit, key=lambda x: int(x) % 2 == 0)))
+numbers = [random.randrange(1024) for i in range(8)]
+group = {i: None for i in numbers[:4]}
 
 
-print(strSort(s,digit=[], lower=[], capital=[]))
+def sotrNumber(numbers):
+    numbers = sorted(numbers)
+
+    def sortGroup(group):
+        nonlocal numbers
+        for i in group:
+            if i in numbers:
+                numbers.remove(i)
+        return sorted(list(group)) + numbers
+
+    return sortGroup
+
+
+print("numbers:{}\ngroup:{}\n\n{}".format(numbers, group.keys(),sotrNumber(numbers)(group)))
