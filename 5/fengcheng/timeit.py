@@ -14,6 +14,7 @@ import re
 import datetime,time
 from functools import wraps
 import inspect
+
 def logger(fn):
     def wrapper(*args,**kwargs):
         start = datetime.datetime.now()
@@ -64,3 +65,6 @@ def fib(x):
 
 print(fib(10))
 print(fib(10))
+
+# 逻辑上没有什么问题，用到了 inspect，看来对一些内置库很熟悉
+# 可以尝试下写过认证的装饰器，把第二周的作业里面的认证改成装饰器的试试

@@ -104,7 +104,8 @@ class GradeBook:
                    sys.exit("登录超过三次,请联系管理员" )
                 num = num - 1
                 continue
-        
+
+
 if __name__ == '__main__':
     gb = GradeBook()
     gb.login()
@@ -126,3 +127,5 @@ if __name__ == '__main__':
             gb.avr()
         else:
             sys.exit("再见！！！")
+
+# 里面的认证部分，结合下咱们的装饰器试试

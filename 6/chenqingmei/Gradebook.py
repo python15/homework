@@ -2,6 +2,7 @@
 
 from week6.Student import Student
 
+
 def printTitle(fn):
     def wrapper(*args, **kwargs):
         #print("Name\tChinese\tMath\tEnglish")
@@ -9,6 +10,7 @@ def printTitle(fn):
         ret = fn(*args, **kwargs)
         return ret
     return wrapper
+
 
 class Gradebook:
     STUDENTS = {}

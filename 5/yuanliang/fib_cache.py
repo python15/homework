@@ -41,6 +41,7 @@ def cache(fn):
         #ret = fn(*args,**kwargs)
         return local_cache[key]
     return wapper
+
 @timeit
 @cache
 def fib(n):
@@ -48,3 +49,5 @@ def fib(n):
         return 1
     return fib(n-1)+fib(n-2)
 print(fib(40))
+
+# 可以,可以尝试下写过认证的装饰器，把第二周的作业里面的认证改成装饰器的试试

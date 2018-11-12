@@ -70,3 +70,5 @@ print(createFibList(10))
 print(createFibList(10))
 time.sleep(4)
 print(createFibList(10))
+
+# 可以，尝试下第2周的作业，里面的认证 用装饰器改下

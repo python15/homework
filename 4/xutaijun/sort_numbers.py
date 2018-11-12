@@ -1,9 +1,11 @@
 #!/bin/env python3
 
+
 def is_set(source_list):
     if not isinstance(source_list,set):
         source_list=set(source_list)
     return source_list
+
 
 def sort_numbers(numbers,is_set=is_set):
     def _sort_numbers(group):
@@ -31,3 +33,5 @@ numbers=[8,3,1,2,5,4,7,6]
 group={2,3,5,7}
 
 print(sort_numbers(numbers)(group))
+
+# 还有优化的空间，再想想，看看能不能用15行之内写出来

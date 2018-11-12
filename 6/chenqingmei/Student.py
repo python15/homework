@@ -1,5 +1,6 @@
 #!/bin/python3.6
 
+
 class Student:
     def __init__(self, name, ch=0, math=0, en=0):
         self.__name = name

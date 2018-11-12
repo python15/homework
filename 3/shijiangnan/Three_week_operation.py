@@ -26,3 +26,5 @@ def inputshuzi():
         else:
             print("please input digit")
 inputshuzi()
+
+# 用1001 这个数字测试你的代码，看看会有什么问题

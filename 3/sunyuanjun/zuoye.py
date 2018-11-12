@@ -40,3 +40,5 @@ while 1:
             continue
         else:
             print(cn(number))
+
+# 代码测试了没有什么问题，写的不错，继续加油~

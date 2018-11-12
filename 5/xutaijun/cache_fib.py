@@ -49,3 +49,7 @@ if __name__=="__main__":
         else:
             input_num=int(input_num)
         show_fib(input_num)
+
+# timeit的那个 用time这个库试试
+# 缓存的那个，最好有个对比，有缓存和没有缓存的对比
+# 可以尝试下写过认证的装饰器，把第二周的作业里面的认证改成装饰器的试试
