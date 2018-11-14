@@ -20,42 +20,57 @@ def logger(fn):
     return wrapper
 
 
-def lCache(fn):
-    localCache = {}
+def lCache(overdue):
+    def _Cache(fn):
+        localCache = {}
 
-    @wraps(fn)
-    def wrapper(*args, **kwargs):
-        sig = inspect.signature(fn)
-        params = sig.parameters
-        param_name = [key for key in params.keys()]
-        param_dict = {}
+        @wraps(fn)
+        def wrapper(*args, **kwargs):
+            def cacheOverdue(overdue):
+                timeCache = []
+                for k, (_, tm) in localCache.items():
+                    if datetime.datetime.now().timestamp() - tm > overdue:
+                        timeCache.append(k)
+                for k in timeCache:
+                    localCache.pop(k)
 
-        for i, v in enumerate(args):
-            k = param_name[i]
-            param_dict[k] = v
-        else:
-            param_dict.update(kwargs)
+            cacheOverdue(overdue)
 
-        for k, v in params.items():
-            if k not in param_dict.keys():
-                param_dict[k] = v.default
+            def makeKey(args, kwargs):
+                sig = inspect.signature(fn)
+                params = sig.parameters
+                param_name = [key for key in params.keys()]
+                param_dict = {}
+                for i, v in enumerate(args):
+                    k = param_name[i]
+                    param_dict[k] = v
+                else:
+                    param_dict.update(kwargs)
+                for k, v in params.items():
+                    if k not in param_dict.keys():
+                        param_dict[k] = v.default
+                key = tuple(sorted(param_dict.items()))
+                return key
 
-        key = tuple(sorted(param_dict.items()))
-        if key not in localCache.keys():
-            localCache[key] = fn(*args, **kwargs)
+            key = makeKey(args, kwargs)
 
-        return localCache[key]
+            if key not in localCache.keys():
+                localCache[key] = (fn(*args, **kwargs), datetime.datetime.now().timestamp())
 
-    return wrapper
+            return localCache[key]
+
+        return wrapper
+
+    return _Cache
 
 
 @logger
-@lCache
+@lCache(8)
 def fib(indexC, index=1):
     lst0 = [0, 1]
     while True:
         if index == indexC: break
-        sum = lst0[-1] + lst0[-2]
+        sum = lst0[-2] + lst0[-1]
         lst0.append(sum)
         index += 1
     return len(lst0)
@@ -65,16 +80,14 @@ while True:
     number = input("Please enter a number to start calculation or enter q to exit: ")
     if number == 'q': break
     print("First computation: {}\n".format(fib(int(number))))
+    time.sleep(6)
     print("Second cache calculation: {}\n".format(fib(int(number))))
 
-
-
 '''
-Simulation test:
-Please enter a number to start calculation or enter q to exit: 200000
-The function runs at 6.024414
-First computation: 200001
+Please enter a number to start calculation or enter q to exit: 300000
+The function runs at 9.303034
+First computation: (300001, 1542189841.096914)
 
-The function runs at 0.001039
-Second cache calculation: 200001
+The function runs at 0.00181
+Second cache calculation: (300001, 1542189841.096914)
 '''
