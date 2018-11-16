@@ -28,7 +28,7 @@ def timeit(fn):
 
 
 @timeit
-def sum_recursion(nu):
+def sum_recursion(nu):  #sum_recursion=timeir()
     time.sleep(2)
     its_sum = 0
     for i in range(nu + 1):
@@ -62,8 +62,16 @@ def cache(fn):
         return local_cache[key],delta
     return wrapper
 
+def userlogin(fn):
+    while True:
+        input_password = input('请输入你的管理密码(默认为‘admin’)>>>>>：')
+        if input_password != 'admin':
+            print('密码输入错误，请重新输入>>>>>')
+            continue
+        return fn
 
 @cache  # fib = cache(fib))
+@userlogin
 def fib(n):
     time.sleep(1)
     lst =[]
@@ -76,8 +84,9 @@ def fib(n):
     fib1(n)
     return lst
 
+
 print(fib(10))
-print(fib(10))
+print(fib(11))
 
 
 
