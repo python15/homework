@@ -42,3 +42,5 @@ if __name__ == '__main__':
     gr.set_grades('zansan','english',88)
     print('学生平均成绩为：{}'.format(gr.gradeavg('zansan')))
 
+# 有个property 装饰方法，你可以看看，
+# 可以加个认证部分，结合下咱们的装饰器试试

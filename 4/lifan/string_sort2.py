@@ -22,3 +22,5 @@ def strSort(s, digit, lower, capital):
 
 
 print(strSort(s,digit=[], lower=[], capital=[]))
+
+# 能写出来 已经是不错了这个，不过用元组排序的方法可能会更好

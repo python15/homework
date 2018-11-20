@@ -20,3 +20,4 @@ print(sort_priority(numbers,group))
 
 
 
+# 同样，写出来已经很不错了，不过这个还有更好的方法，元组排序和lambda 函数

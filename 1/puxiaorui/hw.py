@@ -50,3 +50,5 @@ while True:
             d1.update({user: {'age': age, 'tel': tel}})
     elif s == 'exit':
         break
+
+# 少个验证密码，记得加上, delete 里面除了pop，还有一种方法，想想

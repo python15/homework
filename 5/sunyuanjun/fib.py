@@ -40,3 +40,6 @@ while True:
     else:
         print('程序结束')
         break
+
+
+# 可以，功能上没有什么问题了

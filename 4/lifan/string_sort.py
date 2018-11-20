@@ -30,3 +30,4 @@ def sotrNumber(numbers):
 
 
 print("numbers:{}\ngroup:{}\n\n{}".format(numbers, group.keys(),sotrNumber(numbers)(group)))
+# 这个方法可以，不过还有优化的地方，看下元组排序和lambda 函数
