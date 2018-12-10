@@ -55,4 +55,4 @@ man1 = Man('zhoulinji',25)
 m1 = man1.to_dict('pickle')
 print(pickle.loads(m1))
 
-
+# mixin 这里 你尝试下不要super试试，我记得不用super也是可以的，当然用super也没有毛病~
