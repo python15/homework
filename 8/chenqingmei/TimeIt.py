@@ -15,3 +15,4 @@ class TimeIt:
         print('time cost:', delta)
         return ret
 
+# 这个装饰器没有毛病

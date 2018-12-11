@@ -27,6 +27,7 @@ def search_dir(path, files = []):
             files.append(str(file.parent)+'/' + file.name)
             search_dir(file, files = files)
 
+
 def file_type(file:Path, type):
     if type == 'f':
         return file.is_file()
@@ -79,3 +80,4 @@ result = searchfiles(para.path, name = para.name, type = para.type)
 for file in result:
     print(file)
 
+# 看了一下逻辑，写的超乎我的想象，比我想的全面多了。
