@@ -55,3 +55,4 @@ gb.add_info(student1)
 print(gb.get_averagegrade('dog'))
 print(gb.get_averagegrade('bob'))
 
+# 看下可以用一个类来实现吗？

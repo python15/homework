@@ -32,3 +32,5 @@ pt=Printtest('JACK',14,89)
 print(Printtest.mro())
 print(pt.test)
 print(pt.to_dict(pt.__dict__,t='json'))
+
+# 这个没有什么问题
