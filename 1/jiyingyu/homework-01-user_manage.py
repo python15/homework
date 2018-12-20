@@ -21,18 +21,21 @@ D.values()
 D.items()
 D.copy()
 D.get(key,default)
-
 D1.update(D2)   #字典合并
 D1.pop(key)     #删除元素
 len(D1)         #
 D1(key)=xx      #修改值
 del D(key)      #删除条目
 list(D(keys))   #字典视图
+for k in d:
+    print(k)    #key遍历
 
-
+for k in d:
+    print(d[k]) #value遍历
 '''
 
-#定义一种数据类型user_info
+"""定义一种数据类型user_info"""
+
 user_info={
     "alax":{"age":19, "address":"beijing"},
     "bob":{"age":30, "address":"shangghai"}
@@ -56,13 +59,13 @@ def add(name,age,address):
         print("The name are exsit,Please input another name\n")
     else:
         user_info[name]={"age":age,"address":address}
+
 def delete(name):
     """check the name exist or not"""
     if name in user_info.keys():
         del user_info[name]
     else:
         print("The name is not exist")
-
 
 def update(name,age,address):
     name = input("name:>>>")
@@ -115,4 +118,3 @@ if __name__ == '__main__':
         elif choice == "exit":
             print("bye")
             break
-
