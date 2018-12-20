@@ -37,8 +37,8 @@ for k in d:
 """定义一种数据类型user_info"""
 
 user_info={
-    "alax":{"age":19, "address":"beijing"},
-    "bob":{"age":30, "address":"shangghai"}
+    "alax":{"age":"19", "address":"beijing"},
+    "bob":{"age":"30", "address":"shangghai"}
 }
 
 def welcome():
@@ -65,10 +65,13 @@ def delete(name):
     if name in user_info.keys():
         del user_info[name]
     else:
-        print("The name is not exist")
+        print("The name is not exist\n")
 
 def update(name,age,address):
-    name = input("name:>>>")
+    if name in user_info.keys():
+        user_info[name]={"age":age,"address":address}
+    else:
+        print("This username is not find\n")
     user_info["name"]=name
     user_info.values()
 
@@ -80,7 +83,7 @@ def find(name):
 
         print("{} age is {} and address is {}".format(name,age,address))
     else:
-        print("The name is not found")
+        print("The name is not found\n")
 
 def list():
     print("name    age   address")
@@ -106,7 +109,10 @@ if __name__ == '__main__':
             delete(name)
             continue
         elif choice == "update":
-            update()
+            name = input("name:>>>")
+            age = input("age:>>>")
+            address = input("address:>>>")
+            update(name,age,address)
             continue
         elif choice == "find":
             name = input("name:>>>")
