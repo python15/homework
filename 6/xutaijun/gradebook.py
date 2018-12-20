@@ -33,11 +33,17 @@ class GradesBook:
             else:
                 break
 
+    def avg(self,scoredict):
+        res = 0
+        for _,v in scoredict.items():
+            res += int(v)
+        return res/3
+
     @property
     def get_score(self):
         return self.scoredict
 
-
+#@login
 class StudentMan:
     """学生管理类"""
     def __init__(self):
@@ -51,13 +57,20 @@ class StudentMan:
             print("student exists")
         self._student_man[stu.name]=sco.get_score
     
-    def change_student(self,stu,sco):
+    def change_student(self,stu,sco,man):
         stu.name = input("Please input student's name:")
-        if stu.name in  self._student_man.keys():
-            sco.change_score(self._student_man[stu.name])
+        if stu.name in  man.keys():
+            sco.change_score(man[stu.name])
         else:
             print('!'*3,"student doesn't exists",'!'*3)
 
+    def avg_score(self,stu,sco,man):
+        stu.name = input("Please input student's name:")
+        if stu.name in  man.keys():
+            print('avg score:',sco.avg(man[stu.name]))
+        else:
+            print('!'*3,"student doesn't exists",'!'*3)
+    
     def all_student(self,man):
         """格式化输出，简单实现"""
         for k,v in man.items():
@@ -69,6 +82,7 @@ class StudentMan:
               "1    add a student.\n",
               "2    change student info.\n",
               "3    show all.\n",
+              "4    average scores.\n",
               "Q    exit")
 
     def main(self):
@@ -82,9 +96,11 @@ class StudentMan:
             if n_choose == "1":
                 self.add_student(stu,sco)
             elif n_choose == "2":
-                self.change_student(stu,sco)
+                self.change_student(stu,sco,man)
             elif n_choose == "3":
                 self.all_student(man)
+            elif n_choose == "4":
+                self.avg_score(stu,sco,man)
             elif n_choose == "q" or "Q":
                 break
             else:
