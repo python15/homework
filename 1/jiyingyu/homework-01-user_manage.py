@@ -80,11 +80,12 @@ def find(name):
         print("The name is not found")
 
 def list():
+    print("name    age   address")
     for k in user_info:
         value=user_info.get(k)
         age=value.get("age")
         address=value.get("address")
-        print("{} age is {} and address is {}".format(k,age,address))
+        print("{:<8}{:<6}{:<8}".format(k,age,address))
 
 if __name__ == '__main__':
     welcome()
