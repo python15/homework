@@ -72,8 +72,6 @@ def update(name,age,address):
         user_info[name]={"age":age,"address":address}
     else:
         print("This username is not find\n")
-    user_info["name"]=name
-    user_info.values()
 
 def find(name):
     if name in user_info.keys():
