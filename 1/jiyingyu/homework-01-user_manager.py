@@ -86,7 +86,7 @@ if __name__ == '__main__':
     welcome()
     flag=False
     while not flag:
-        choice = input("\nPlease choice 'add | delete | update | find | list | exit\n >>>")
+        choice = input("\nPlease choice add | delete | update | find | list | exit \n >>>")
         if choice =="add":
             name = input("name:>>>")
             age = input("age:>>>")
