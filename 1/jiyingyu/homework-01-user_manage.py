@@ -122,3 +122,6 @@ if __name__ == '__main__':
         elif choice == "exit":
             print("bye")
             break
+            
+            
+ # 逻辑上没有什么问题，尝试第二次的作业
