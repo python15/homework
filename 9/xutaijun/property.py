@@ -32,3 +32,4 @@ print(a.data)
 
 print("="*59)
 a.data = 200
+# 没有什么太大的问题，少个del的方法，记得加上

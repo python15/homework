@@ -42,7 +42,7 @@ print(s.age)
 s.age = 10
 print(s.__dict__)
 
-
+# 少个del的方法 加上
 
 
 

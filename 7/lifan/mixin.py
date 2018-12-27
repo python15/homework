@@ -32,3 +32,5 @@ class DictMiXin(MiXin, StInfo): pass
 st = DictMiXin()
 st['name'],st['age'],st['discipline'] = 'zs',16,'IT'
 st.ToDict()
+
+# todict 是把属性转化成字典

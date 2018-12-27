@@ -25,3 +25,5 @@ class Cat(ToMixin,Animal):
 
 cat = Cat('xiaomiaomi','grey','small','miaomi')
 print(cat.to_dict())	
+
+# 没有什么问题~

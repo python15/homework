@@ -47,3 +47,5 @@ if __name__ == '__main__':
 
     else:
         print("Please Input a number bettween 1000 to 10000")
+
+# 判断逻辑层有点多，想想如何优化下
