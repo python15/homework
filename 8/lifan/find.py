@@ -23,6 +23,9 @@ class TimeIt:
 
 
 class FileFind:
+    '''
+    find directory files
+    '''
     argDict = {'f': 'is_file()', 'd': 'is_dir()', 'b': 'is_block_device()', 's': 'is_socket()'}
 
     def __init__(self, path=None, name=None, type=None, user=None):
@@ -59,6 +62,7 @@ parser.add_argument('-name', default='*')
 parser.add_argument('-user')
 args = parser.parse_args()
 f = FileFind(args.path, name=args.name, type=args.type, user=args.user)
+print(f.__doc__)
 for i in f.find: print(i)
 
 '''
