@@ -14,32 +14,35 @@ class TimeIt:
         self.fn = fn
         wraps(fn)(self)
 
-    def __call__(self, *args, **kwargs):
+    def __get__(self, instance, owner):
         start = datetime.datetime.now()
-        ret = self.fn(*args, **kwargs)
+        ret = self.fn(instance)
         stop = (datetime.datetime.now() - start).total_seconds()
         print("The function runs at {}".format(stop))
         return ret
 
 
-@TimeIt
 class FileFind:
     argDict = {'f': 'is_file()', 'd': 'is_dir()', 'b': 'is_block_device()', 's': 'is_socket()'}
 
-    def __init__(self, path=None):
+    def __init__(self, path=None, name=None, type=None, user=None):
         self.path = path
         self.file = []
+        self.name = name
+        self.type = type
+        self.user = user
 
-    def find(self, name=None, type=None, user=None):
-        for i in Path(self.path).rglob(name):
-            if user is None:
-                if i.stat().st_uid >= 0 and eval('i{}'.format(('.' + self.argDict.get(type)) if self.argDict.get(type) else '')):
+    @TimeIt
+    def find(self):
+        time.sleep(3)
+        for i in Path(self.path).rglob(self.name):
+            if self.user is None:
+                if i.stat().st_uid >= 0 and eval('i{}'.format(('.' + self.argDict.get(self.type)) if self.argDict.get(self.type) else '')):
                     self.file.append(i)
             else:
-                user = int(user)
-                if i.stat().st_uid == user and eval('i{}'.format(('.' + self.argDict.get(type)) if self.argDict.get(type) else '')):
+                self.user = int(self.user)
+                if i.stat().st_uid == self.user and eval('i{}'.format(('.' + self.argDict.get(self.type)) if self.argDict.get(self.type) else '')):
                     self.file.append(i)
-
         return self.file
 
 
@@ -55,8 +58,8 @@ parser.add_argument('-type', help='''
 parser.add_argument('-name', default='*')
 parser.add_argument('-user')
 args = parser.parse_args()
-f = FileFind(args.path)
-for i in f.find(name=args.name, type=args.type, user=args.user): print(i)
+f = FileFind(args.path, name=args.name, type=args.type, user=args.user)
+for i in f.find: print(i)
 
 '''
 localhost:8 Fan$ python3.6  find.py  -h
@@ -74,10 +77,9 @@ optional arguments:
               directory,
   -name NAME
   -user USER
-
-localhost:8 Fan$  python3.6  find.py  /tmp/logs/ -name *.log -type f -user 0
-The function runs at 1.5e-05
-/tmp/logs/ssss.log
-/tmp/logs/a.log
-/tmp/logs/mmmm.log
+  
+localhost:8 Fan$ python3.6  find.py /tmp/logs/ -type f -name *log -user 501
+The function runs at 3.006335
+/tmp/logs/tomcat.log
+/tmp/logs/httpd.log
 '''
