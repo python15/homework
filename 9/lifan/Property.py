@@ -56,3 +56,15 @@ zs.mg = 26
 print(zs.__dict__)
 del zs.mg
 print(zs.__dict__)
+
+
+
+'''
+localhost:lifan Fan$ python3.6  Property.py
+
+       Student management
+
+('张三', '武汉')
+{'name': '张三', 'addr': '武汉', 'age': 26}
+{'name': '张三', 'addr': '武汉'}
+'''
