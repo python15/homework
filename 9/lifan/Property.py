@@ -12,15 +12,15 @@ class MyProperty:
     def __get__(self, instance, owner):
         return self.fget(instance)
 
-    def setter(self, value):
-        self.fset = value
+    def setter(self, fn):
+        self.fset = fn
         return self
 
     def __set__(self, instance, value):
         self.fset(instance, value)
 
-    def deleter(self, value):
-        self.fdel = value
+    def deleter(self, fn):
+        self.fdel = fn
         return self
 
     def __delete__(self, instance):
@@ -56,8 +56,6 @@ zs.mg = 26
 print(zs.__dict__)
 del zs.mg
 print(zs.__dict__)
-
-
 
 '''
 localhost:lifan Fan$ python3.6  Property.py
