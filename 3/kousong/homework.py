@@ -1,4 +1,4 @@
-#翻译阿拉伯数字
+#third homework:翻译阿拉伯数字
 num=(input("give me a four-number please:"))
 data={"0":"零","1":"壹","2":"贰","3":"叁","4":"肆","5":"伍","6":"陆","7":"柒","8":"捌","9":"玖"}
 lstt=[]#带判断数据
@@ -9,15 +9,22 @@ for i in str(num):
 
 #首数字为0的情况
 while lstt[0]=="0":
-    lstt.pop(0)
+    lenth=len(lstt)
+    if lenth>1:
+        lstt.pop(0)
+    else:
+        break
+    
+    
 
-#最终数据列表形成，开始分析    
+#最终数据列表形成，开始分析 
+
 lst=lstt
 lenth=len(lst)
 
 #个位
 if lenth<2:
-    print(data[num]+" "+"元")
+    print(data[lst[0]]+" "+"元")
 
 #两位数
 elif lenth<3:
