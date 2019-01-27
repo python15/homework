@@ -53,3 +53,4 @@ while True:
                 count+=1
             data1[i][1][2]="*"*count
             print(data1[i])
+# 代码还可以在优化下，等学到后面，记得回头看再来看下这个代码哈

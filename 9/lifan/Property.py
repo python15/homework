@@ -66,3 +66,4 @@ localhost:lifan Fan$ python3.6  Property.py
 {'name': '张三', 'addr': '武汉', 'age': 26}
 {'name': '张三', 'addr': '武汉'}
 '''
+# 很棒~

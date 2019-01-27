@@ -1,13 +1,13 @@
-#third homework:·­Òë°¢À­²®Êý×Ö
+#third homework:ï¿½ï¿½ï¿½ë°¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 num=(input("give me a four-number please:"))
-data={"0":"Áã","1":"Ò¼","2":"·¡","3":"Èþ","4":"ËÁ","5":"Îé","6":"Â½","7":"Æâ","8":"°Æ","9":"¾Á"}
-lstt=[]#´øÅÐ¶ÏÊý¾Ý
-lst=[]#×îÖÕÕæÊµÊý¾Ý
-#½«Êý·Ö³É×Ö·ûÐ´ÈëÁÐ±í
+data={"0":"ï¿½ï¿½","1":"Ò¼","2":"ï¿½ï¿½","3":"ï¿½ï¿½","4":"ï¿½ï¿½","5":"ï¿½ï¿½","6":"Â½","7":"ï¿½ï¿½","8":"ï¿½ï¿½","9":"ï¿½ï¿½"}
+lstt=[]#ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½
+lst=[]#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½
+#ï¿½ï¿½ï¿½ï¿½ï¿½Ö³ï¿½ï¿½Ö·ï¿½Ð´ï¿½ï¿½ï¿½Ð±ï¿½
 for i in str(num):
     lstt.append(i)
 
-#Ê×Êý×ÖÎª0µÄÇé¿ö
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª0ï¿½ï¿½ï¿½ï¿½ï¿½
 while lstt[0]=="0":
     lenth=len(lstt)
     if lenth>1:
@@ -15,54 +15,57 @@ while lstt[0]=="0":
     else:
         break
     
-    
 
-#×îÖÕÊý¾ÝÁÐ±íÐÎ³É£¬¿ªÊ¼·ÖÎö 
+
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Î³É£ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ 
 
 lst=lstt
 lenth=len(lst)
 
-#¸öÎ»
+#ï¿½ï¿½Î»
 if lenth<2:
     print(data[lst[0]]+" "+"Ôª")
 
-#Á½Î»Êý
+#ï¿½ï¿½Î»ï¿½ï¿½
 elif lenth<3:
     if lst[1]=="0":
         print(data[lst[0]]+"Ê®"+" "+"Ôª")
     else:
         print(data[lst[0]]+"Ê®"+data[lst[1]]+" "+"Ôª")
 
-#ÈýÎ»Êý
+#ï¿½ï¿½Î»ï¿½ï¿½
 elif lenth<4:
     if lst[1]=="0":
         if lst[2]=="0":
-            print(data[lst[0]]+"°Û"+" "+"Ôª")
+            print(data[lst[0]]+"ï¿½ï¿½"+" "+"Ôª")
         else:
-            print(data[lst[0]]+"°ÛÁã"+data[lst[2]]+" "+"Ôª")
+            print(data[lst[0]]+"ï¿½ï¿½ï¿½ï¿½"+data[lst[2]]+" "+"Ôª")
     elif lst[2]=="0":
-        print(data[lst[0]]+"°Û"+data[lst[1]]+"Ê®"+" "+"Ôª")
+        print(data[lst[0]]+"ï¿½ï¿½"+data[lst[1]]+"Ê®"+" "+"Ôª")
     else:
-        print(data[lst[0]]+"°Û"+data[lst[1]]+"Ê®"+data[lst[2]]+" "+"Ôª")
-#ËÄÎ»Êý
+        print(data[lst[0]]+"ï¿½ï¿½"+data[lst[1]]+"Ê®"+data[lst[2]]+" "+"Ôª")
+#ï¿½ï¿½Î»ï¿½ï¿½
 else:
     if lst[1]=="0":
         if lst[2]=="0":
             if lst[3]=="0":
                 print(data[lst[0]]+"Çª"+" "+"Ôª")
             else:
-                print(data[lst[0]]+"ÇªÁã"+data[lst[3]]+" "+"Ôª")
+                print(data[lst[0]]+"Çªï¿½ï¿½"+data[lst[3]]+" "+"Ôª")
         elif lst[3]=="0":
-            print(data[lst[0]]+"ÇªÁã"+data[lst[2]]+"Ê®"+" "+"Ôª")
+            print(data[lst[0]]+"Çªï¿½ï¿½"+data[lst[2]]+"Ê®"+" "+"Ôª")
         else:
-            print(data[lst[0]]+"ÇªÁã"+data[lst[2]]+"Ê®"+data[lst[3]]+" "+"Ôª")
+            print(data[lst[0]]+"Çªï¿½ï¿½"+data[lst[2]]+"Ê®"+data[lst[3]]+" "+"Ôª")
     elif lst[2]=="0":
         if lst[3]=="0":
-            print(data[lst[0]]+"Çª"+data[lst[1]]+"°Û"+" "+"Ôª")
+            print(data[lst[0]]+"Çª"+data[lst[1]]+"ï¿½ï¿½"+" "+"Ôª")
         else:
-            print(data[lst[0]]+"Çª"+data[lst[1]]+"°ÛÁã"+data[lst[3]]+" "+"Ôª")
+            print(data[lst[0]]+"Çª"+data[lst[1]]+"ï¿½ï¿½ï¿½ï¿½"+data[lst[3]]+" "+"Ôª")
     else:
         if lst[3]=="0":
-            print(data[lst[0]]+"Çª"+data[lst[1]]+"°Û"+data[lst[2]]+"Ê®"+" "+"Ôª")
+            print(data[lst[0]]+"Çª"+data[lst[1]]+"ï¿½ï¿½"+data[lst[2]]+"Ê®"+" "+"Ôª")
         else:
-            print(data[lst[0]]+"Çª"+data[lst[1]]+"°Û"+data[lst[2]]+"Ê®"+data[lst[3]]+" "+"Ôª")
+            print(data[lst[0]]+"Çª"+data[lst[1]]+"ï¿½ï¿½"+data[lst[2]]+"Ê®"+data[lst[3]]+" "+"Ôª")
+
+
+# æˆ‘è¿™è¾¹çœ‹åˆ°çš„æ˜¯ä¹±ç ï¼Œå¯ä»¥çš„è¯ ç§èŠæˆ‘ä¸‹

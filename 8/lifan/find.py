@@ -87,3 +87,4 @@ The function runs at 3.006335
 /tmp/logs/tomcat.log
 /tmp/logs/httpd.log
 '''
+# 可以，结合argparse来做个更好

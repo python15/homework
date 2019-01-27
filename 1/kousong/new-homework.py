@@ -29,3 +29,5 @@ while True:
     elif do=="exit":
         print("exit")
         break
+
+# 逻辑上没有什么问题，可以的话 在加个add的操作

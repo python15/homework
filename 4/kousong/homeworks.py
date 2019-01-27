@@ -20,3 +20,5 @@ def sort (iterable,key=lambda a,b: a<b):
     return(lst1+lst2)
 
 print(sort(num))
+
+# 有问题哈，再想想，有个闭包的东西，可以试试，还有元组的排序，你可以看下

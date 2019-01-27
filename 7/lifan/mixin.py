@@ -29,3 +29,4 @@ print(st)                       #{'name': 'zs', 'age': 16, 'discipline': 'IT'}
 print(st.ToDict())              #{"name": "zs", "age": 16, "discipline": "IT"}
 
 
+# 这个没有问题~
