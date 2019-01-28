@@ -34,5 +34,8 @@ def convert_num():
         convert_result[len(convert_result)-1]=unit[0]  
     #print(convert_result)    
     print(''.join(convert_result))
+
 if __name__ == '__main__':
     convert_num()
+
+# 写的很好，有个小问题是 return 和break的用法，你可以在思考下
