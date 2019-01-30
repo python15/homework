@@ -47,3 +47,4 @@ if __name__ == "__main__":
     del a.data
     print(a.data)
 
+# 这个考察的是对描述器的简单理解，会用就可以了

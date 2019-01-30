@@ -27,6 +27,7 @@ parser.add_argument('tp',nargs='?',help="find the file with the name")
 #         print(deltime)
 #         return ret
 #     return _wrapper
+
 class timeIt:
     def __init__(self,fn):
         self._fn = fn
@@ -104,3 +105,4 @@ if __name__ == "__main__":
     #f.find_type(args.path)
     #f.findall(args.path)
 
+# 不错！可以加个自动判断系统的，linux和windows
