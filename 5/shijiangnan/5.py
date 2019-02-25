@@ -65,3 +65,5 @@ while True:
         print(fibgetvalue(inputfibnumint))
     else:
         print("Please check that the input is correct.")
+
+# 尝试用class 的__call__ 来写个装饰器
