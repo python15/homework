@@ -20,3 +20,7 @@ def add():
         a=a+i
     return(a)
 print(add())
+
+"""
+def _logger(*args,**kwargs):
+"""
