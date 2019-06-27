@@ -6,6 +6,9 @@ class A:
 
     def add (self,name,sub,grace):
         A.data[(name,sub)]=grace
+        """
+        这里的A换成self 试试
+        """
         
     def ave(self,name):
         sum = 0
