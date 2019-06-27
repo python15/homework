@@ -26,3 +26,6 @@ class A(Mixin):
 
 a=A(True)
 a.to_dict()
+“”“”
+mixin比较简单的
+“”“”
