@@ -1,11 +1,11 @@
-#sixth week
+﻿#sixth week
 class A:
     data = {('tom','cha'):'100',('tom','eng'):'60',('jerry','cha'):'80'}
     def __init__(self):
         self.data = A.data
 
     def add (self,name,sub,grace):
-        A.data[(name,sub)]=grace
+        self.data[(name,sub)]=grace
         """
         这里的A换成self 试试
         """

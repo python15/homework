@@ -4,9 +4,9 @@ import datetime
 
 
 def logger(fn):
-    def _logger(*args):
+    def _logger(*args,**kwargs):
         now = datetime.datetime.now()
-        ret=fn(*args)
+        ret=fn(*args,**kwargs)
         
         dalta=(datetime.datetime.now() - now).total_seconds()
         
